@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import base64
 import email.utils
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
@@ -46,12 +47,29 @@ class GmailSource(MessageSource):
         self._service: Optional[Resource] = None
         self._user_email: Optional[str] = None
 
+        # If credentials provided via env var (for Railway/cloud deployment), write to disk
+        creds_path = Path(self._credentials_path)
+        if not creds_path.exists():
+            env_creds = os.environ.get("GMAIL_CREDENTIALS_JSON")
+            if env_creds:
+                creds_path.parent.mkdir(parents=True, exist_ok=True)
+                creds_path.write_text(env_creds)
+                logger.info("gmail.credentials_loaded_from_env")
+
     # ------------------------------------------------------------------
     # Authentication helpers
     # ------------------------------------------------------------------
 
     def _get_credentials(self) -> Credentials:
         """Load or refresh OAuth credentials, running the consent flow if needed."""
+        # If token provided via env var (for Railway/cloud deployment), write it to disk
+        if not TOKEN_PATH.exists():
+            env_token = os.environ.get("GMAIL_TOKEN_JSON")
+            if env_token:
+                TOKEN_PATH.parent.mkdir(parents=True, exist_ok=True)
+                TOKEN_PATH.write_text(env_token)
+                logger.info("gmail.token_loaded_from_env")
+
         creds: Optional[Credentials] = None
 
         if TOKEN_PATH.exists():
