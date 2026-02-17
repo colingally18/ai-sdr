@@ -91,7 +91,7 @@ class ContactEnricher:
 
         if self.apollo and self.apollo.is_available():
             # Use Apollo when we have email but still missing data
-            if email and not result.get("title"):
+            if (email or name) and not result.get("title"):
                 apollo_data = self.apollo.enrich(
                     email=email,
                     linkedin_url=linkedin_url,

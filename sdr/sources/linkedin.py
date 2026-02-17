@@ -32,6 +32,7 @@ class LinkedInSource(MessageSource):
             "X-API-KEY": api_key,
             "accept": "application/json",
         }
+        self._user_profile_cache: dict[str, Optional[dict]] = {}
 
     def is_available(self) -> bool:
         """Check if Unipile API is reachable."""
@@ -154,14 +155,16 @@ class LinkedInSource(MessageSource):
         """Build a mapping from attendee ID to attendee info from a chat object.
 
         Unipile stores attendee names on the chat object's `attendees` array,
-        not on individual messages. Each attendee has an `id` and name fields.
+        not on individual messages. Index by multiple ID fields so sender_id
+        matches regardless of which key Unipile uses (internal vs provider ID).
         """
         attendee_map: dict[str, dict] = {}
-        attendees = chat.get("attendees", [])
-        for att in attendees:
-            att_id = att.get("id", "")
-            if att_id:
-                attendee_map[att_id] = att
+        for att in chat.get("attendees", []):
+            for key in ("id", "provider_id", "attendee_id",
+                        "attendee_provider_id", "provider_user_id"):
+                att_id = att.get(key, "")
+                if att_id:
+                    attendee_map[att_id] = att
         return attendee_map
 
     def _resolve_sender_name(self, sender_id: str, attendee_map: dict[str, dict], msg: dict) -> str:
@@ -176,6 +179,8 @@ class LinkedInSource(MessageSource):
             return att["display_name"]
         if att.get("name"):
             return att["name"]
+        if att.get("attendee_name"):
+            return att["attendee_name"]
         first = att.get("first_name", "")
         last = att.get("last_name", "")
         if first or last:
@@ -202,6 +207,7 @@ class LinkedInSource(MessageSource):
         linkedin_url = (
             att.get("profile_url")
             or att.get("linkedin_url")
+            or att.get("attendee_profile_url")
             or sender.get("profile_url")
             or sender.get("linkedin_url")
             or ""
@@ -220,6 +226,28 @@ class LinkedInSource(MessageSource):
             "headline": headline,
         }
 
+    def _fetch_user_profile(self, provider_id: str) -> Optional[dict]:
+        """Fetch user profile by provider ID from Unipile."""
+        if provider_id in self._user_profile_cache:
+            return self._user_profile_cache[provider_id]
+        try:
+            resp = requests.get(
+                f"{self.base_url}/users/{provider_id}",
+                headers=self.headers,
+                timeout=15,
+            )
+            if resp.status_code == 200:
+                profile = resp.json()
+                pub_id = profile.get("public_identifier")
+                if pub_id and not profile.get("profile_url"):
+                    profile["profile_url"] = f"https://linkedin.com/in/{pub_id}"
+                self._user_profile_cache[provider_id] = profile
+                return profile
+        except Exception as e:
+            logger.warning("linkedin.user_fetch_failed", provider_id=provider_id, error=str(e))
+        self._user_profile_cache[provider_id] = None
+        return None
+
     def _fetch_chat_messages(self, chat: dict, account_id: Optional[str] = None) -> list[InboundMessage]:
         """Fetch messages from a specific chat and normalize them."""
         messages = []
@@ -228,6 +256,25 @@ class LinkedInSource(MessageSource):
 
         # Build attendee map from chat object
         attendee_map = self._build_attendee_map(chat)
+
+        # Log raw attendee field names for diagnostics
+        attendees = chat.get("attendees", [])
+        if attendees:
+            logger.info("linkedin.attendee_fields", chat_id=chat_id,
+                        fields=list(attendees[0].keys()))
+
+        # If attendees are empty, fetch individual chat detail
+        if not attendee_map:
+            try:
+                detail_resp = requests.get(
+                    f"{self.base_url}/chats/{chat_id}",
+                    headers=self.headers,
+                    timeout=15,
+                )
+                detail_resp.raise_for_status()
+                attendee_map = self._build_attendee_map(detail_resp.json())
+            except Exception as e:
+                logger.warning("linkedin.chat_detail_fetch_failed", chat_id=chat_id, error=str(e))
 
         try:
             resp = requests.get(
@@ -240,6 +287,15 @@ class LinkedInSource(MessageSource):
             data = resp.json()
 
             chat_messages = data.get("items", data.get("data", []))
+
+            # Resolve unknown senders via /users endpoint
+            for msg in chat_messages:
+                sid = msg.get("sender_id", "")
+                if sid and sid not in attendee_map:
+                    logger.info("linkedin.sender_miss", chat_id=chat_id, sender_id=sid)
+                    profile = self._fetch_user_profile(sid)
+                    if profile:
+                        attendee_map[sid] = profile
 
             # Build thread context from all messages using attendee map
             thread_parts = []
