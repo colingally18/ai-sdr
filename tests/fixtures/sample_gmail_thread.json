@@ -1,0 +1,22 @@
+{
+  "id": "thread_001",
+  "messages": [
+    {
+      "id": "msg_001",
+      "threadId": "thread_001",
+      "labelIds": ["INBOX"],
+      "internalDate": "1708099200000",
+      "payload": {
+        "mimeType": "text/plain",
+        "headers": [
+          {"name": "From", "value": "John Smith <john@acmeagency.com>"},
+          {"name": "Subject", "value": "LinkedIn outreach services"},
+          {"name": "Date", "value": "Fri, 16 Feb 2024 12:00:00 -0500"}
+        ],
+        "body": {
+          "data": "SGkgQ29saW4sCgpJJ3ZlIGJlZW4gbG9va2luZyBpbnRvIExpbmtlZEluIG91dHJlYWNoIHNlcnZpY2VzIGZvciBvdXIgQjJCIG1hcmtldGluZyBhZ2VuY3kuIFdlIGhhdmUgYWJvdXQgMjUgZW1wbG95ZWVzIGFuZCBhcmUgZG9pbmcgYXJvdW5kICQzTSBpbiByZXZlbnVlLiBPdXIgYXZlcmFnZSBjbGllbnQgaXMgd29ydGggYWJvdXQgJDQwSy9tby4KCldlJ3ZlIGJlZW4gdHJ5aW5nIHRvIGRvIExpbmtlZEluIHByb3NwZWN0aW5nIGluLWhvdXNlIGJ1dCB0aGUgcmVwbHkgcmF0ZXMgaGF2ZSBiZWVuIHByZXR0eSBiYWQuIFdvdWxkIGxvdmUgdG8gaGVhciBob3cgeW91IGFwcHJvYWNoIHRoaXMuCgpCZXN0LApKb2hu"
+        }
+      }
+    }
+  ]
+}

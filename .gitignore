@@ -1,0 +1,28 @@
+# Secrets
+.env
+config/gmail_credentials.json
+data/gmail_token.json
+
+# Runtime data
+data/sdr.db
+data/logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

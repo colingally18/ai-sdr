@@ -1,0 +1,21 @@
+# Pattern-Sharing Campaign Examples
+# Use when: No direct case study match, but can share industry insights
+# Strategy: Lead with a pattern or insight from working across the industry
+
+## Example 1: Industry Trend
+Context: Prospect in an industry where you've seen a recurring pattern
+Message:
+"""
+Been noticing a pattern with [industry] companies this quarter — the ones investing in LinkedIn outbound are seeing 3-4x the response rates compared to cold email alone. Seems like the channel isn't as saturated yet in your space.
+
+Curious if that matches what you're seeing, or if your pipeline is coming from other channels right now?
+"""
+
+## Example 2: Role-Based Pattern
+Context: New VP Sales at a growth-stage company
+Message:
+"""
+Congrats on the VP Sales role at [Company] — first 90 days are always intense. One pattern I keep seeing with new sales leaders: the outbound motion they inherit is usually email-heavy and underperforming on LinkedIn.
+
+If you're evaluating channels right now, happy to share what's working for similar companies. If you've already got it dialed in, ignore me completely.
+"""

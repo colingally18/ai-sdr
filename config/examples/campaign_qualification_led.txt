@@ -1,0 +1,30 @@
+# Qualification-Led Campaign Examples
+# Use when: Social proof is moderate, market isn't saturated with similar outreach
+# Strategy: Lead with a qualifying question that implies expertise
+
+## Example 1: Agency Owner
+Context: Targeting marketing agency owners who are doing manual outbound
+Message:
+"""
+Noticed you're scaling [Agency Name] — curious if LinkedIn outbound is something you've tested, or if most of your pipeline comes from referrals and inbound right now?
+
+We've been helping similar-sized agencies build a predictable outbound channel — but it only works if the unit economics support it. Worth exploring, or not the right time?
+"""
+
+## Example 2: SaaS Founder
+Context: SaaS founder who just posted about hiring SDRs
+Message:
+"""
+Saw your post about building out the sales team — congrats on the growth. Quick question: are you seeing better results from manual LinkedIn prospecting or automated sequences right now?
+
+Asking because we work with a few SaaS companies in your space and the answer usually determines which approach makes sense. If you're open to comparing notes, happy to share what's working.
+"""
+
+## Example 3: IT Services
+Context: MSP owner who connected on LinkedIn
+Message:
+"""
+Thanks for connecting — noticed you're running an MSP in [region]. Curious, is outbound something you've invested in, or does most business come through referrals and vendor partnerships?
+
+Not pitching anything — genuinely trying to understand if what we do would even be relevant for your model.
+"""

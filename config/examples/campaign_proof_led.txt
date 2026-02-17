@@ -1,0 +1,21 @@
+# Proof-Led Campaign Examples
+# Use when: Strong social proof available, similar company/industry to the prospect
+# Strategy: Lead with a specific result from a similar company
+
+## Example 1: Agency with Case Study Match
+Context: Agency in same vertical as a successful client
+Message:
+"""
+We recently helped a [similar industry] agency go from 0 to 12 qualified meetings/month through LinkedIn — took about 6 weeks to ramp. Their model is pretty similar to yours from what I can see.
+
+Not sure if outbound is even on your radar right now, but if it is, happy to walk through what worked for them. If not, no worries at all.
+"""
+
+## Example 2: Consulting Firm
+Context: Consulting firm that matches a recent win
+Message:
+"""
+Worked with a [size] consulting firm last quarter that was struggling with feast-or-famine pipeline — they're now booking 8-10 discovery calls/month through LinkedIn without the founder doing any of the outreach.
+
+Your firm looks like it might have a similar challenge based on [specific detail]. Worth a conversation, or is pipeline not the bottleneck right now?
+"""

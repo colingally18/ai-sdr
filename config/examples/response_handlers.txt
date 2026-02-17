@@ -1,0 +1,54 @@
+# Response Handler Examples
+# How to reply to common response types
+
+## Positive Interest
+Prospect: "Yeah, we've been thinking about LinkedIn outbound. What does your service look like?"
+Strategy: Don't dump info. Qualify first, then offer a call.
+Reply:
+"""
+Great to hear it's on your radar — before I go into details, quick question: are you looking for someone to fully manage the outreach, or more of a strategy/coaching setup? The approach is pretty different depending on what you need.
+
+Happy to jump on a quick call to figure out if there's a fit — would [day/time] work?
+"""
+
+## Objection: Price
+Prospect: "Sounds interesting but probably out of our budget right now."
+Strategy: Acknowledge, qualify on value, offer to explore anyway.
+Reply:
+"""
+Totally fair — budget timing is real. Quick question though: what's a qualified meeting worth to your business? Most of our clients are in the $2-5K range per closed deal, which usually makes the math work even at conservative conversion rates.
+
+Worth a 15-min call to see if the numbers make sense for you, or genuinely not the right time?
+"""
+
+## Objection: Already Doing It
+Prospect: "We already have an outbound team handling LinkedIn."
+Strategy: Don't compete. Explore if they're getting results.
+Reply:
+"""
+Nice — always good to hear when companies are already investing in the channel. Curious: are you happy with the reply rates and meeting quality you're seeing? No agenda — just trying to understand if what we do would even add value on top of what you've built.
+"""
+
+## Vague/Low-Effort Response
+Prospect: "Thanks for reaching out!"
+Strategy: Re-engage with a specific question. Don't let it die.
+Reply:
+"""
+Of course — curious, is LinkedIn outbound something you're actively exploring, or was the connection more of a general networking thing? Either way is totally fine, just want to be respectful of your time.
+"""
+
+## Job Seeker (Not a Lead)
+Prospect: "I'm actually looking for opportunities in sales development. Are you hiring?"
+Strategy: Be kind, redirect, don't waste time.
+Reply:
+"""
+Appreciate you reaching out — we're not hiring for that role right now, but I'd suggest checking out [relevant job board]. Best of luck with the search!
+"""
+
+## Competitor / Vendor
+Prospect: "We also do LinkedIn outreach — maybe we could partner?"
+Strategy: Polite decline, don't share intel.
+Reply:
+"""
+Appreciate the thought — we're pretty focused on our current approach right now and not exploring partnerships. Best of luck with your business!
+"""

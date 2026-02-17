@@ -1,0 +1,126 @@
+company:
+  name: Growlancer
+  founders: ["Colin", "Jeana"]
+  tagline: "LinkedIn Sales Intelligence Engine"
+  offer: "Done-for-you LinkedIn outreach that books qualified meetings for B2B service businesses"
+
+icp:
+  description: "B2B service businesses looking to generate pipeline through LinkedIn"
+  criteria:
+    - "B2B service business (agency, consultancy, SaaS with services)"
+    - "Revenue: $500K-$50M (sweet spot: $1M-$10M)"
+    - "Team size: 10-200 employees"
+    - "LTV per client: $20K+"
+    - "Currently doing outbound or wants to start"
+    - "Founder/CEO, VP Sales, Head of Growth, Revenue leader"
+    - "Has a proven offer but needs more pipeline"
+  industries:
+    - "Marketing agencies"
+    - "IT services / MSPs"
+    - "Consulting firms"
+    - "SaaS companies with sales-led motion"
+    - "Staffing / recruiting agencies"
+    - "Professional services"
+
+anti_icp:
+  description: "Signals that someone is NOT a good fit"
+  criteria:
+    - "Solo freelancer / solopreneur with no team"
+    - "B2C business"
+    - "Job seeker looking for work"
+    - "Selling a competing service (LinkedIn outreach, lead gen)"
+    - "Student or academic researcher"
+    - "LTV under $5K per client"
+    - "No clear service offering"
+    - "Crypto/NFT/get-rich-quick"
+
+framework:
+  name: "3-7% Signal Framework"
+  description: |
+    At any given time, only 3-7% of your addressable market is actively buying.
+    The other 93-97% are not ready yet. The goal is to:
+    1. Identify the 3-7% through signals (job changes, funding, hiring, content engagement)
+    2. Engage them with consultative, peer-to-peer outreach (not pitching)
+    3. Nurture the 93-97% so Growlancer is top-of-mind when they ARE ready
+
+  signals:
+    high_intent:
+      - "Directly asks about pricing or services"
+      - "Mentions a specific pain point Growlancer solves"
+      - "Referral from existing client"
+      - "Responded to outbound with interest"
+      - "Visited pricing page or booked a call"
+
+    medium_intent:
+      - "Job change to a role that buys outreach services"
+      - "Company just raised funding"
+      - "Hiring for sales/marketing roles (signals growth)"
+      - "Engaged with Growlancer content (liked, commented, shared)"
+      - "Connected on LinkedIn and has ICP profile"
+      - "Opened/clicked email multiple times"
+
+    low_intent:
+      - "Accepted connection request but no engagement"
+      - "Viewed profile but no action"
+      - "Generic 'nice to connect' message"
+      - "Follows company page"
+
+tone:
+  description: |
+    Growlancer's outreach tone is consultative and peer-to-peer.
+    Colin and Jeana position themselves as advisors, not salespeople.
+  principles:
+    - "Lead with curiosity, not claims"
+    - "Qualify fit before pitching anything"
+    - "Use exit ramps: 'If this isn't relevant, no worries at all'"
+    - "Reference specific details from their profile/message"
+    - "Keep it concise: 50-60 words for LinkedIn DMs"
+    - "Em dashes for line breaks in LinkedIn messages"
+    - "No filler words: just, really, actually, basically, honestly"
+    - "No setup language: 'I wanted to reach out because...', 'Hope this finds you well'"
+    - "Sound like a human peer, not a sales bot or AI"
+    - "Stage-appropriate CTAs (don't pitch on first touch)"
+
+  voice_examples:
+    good:
+      - "Noticed you just moved into the Head of Growth role at [Company] — congrats. Curious if outbound is on your radar for Q2, or if you're focused elsewhere right now?"
+      - "Saw your post about struggling with LinkedIn reply rates — we've been testing something with similar B2B services companies that's been interesting. Worth a quick look, or not the right time?"
+    bad:
+      - "Hi! I'm Colin from Growlancer. We help B2B companies generate leads through LinkedIn. Would love to chat!"
+      - "I noticed you're in the B2B space and thought our services might be a great fit for your needs."
+
+conversation_stages:
+  new:
+    description: "First message received, not yet replied to"
+    strategy: "Consultative first reply. Qualify fit. Don't pitch."
+    cta: "Open-ended question about their situation"
+
+  engaging:
+    description: "Initial reply sent, waiting for or processing response"
+    strategy: "Deepen conversation. Share a relevant insight or case study."
+    cta: "Ask about their current approach or challenge"
+
+  qualifying:
+    description: "Active back-and-forth, determining fit"
+    strategy: "Dig into specifics. Understand their pain, timeline, budget signals."
+    cta: "Explore fit with specific questions"
+
+  booking:
+    description: "Fit confirmed, trying to schedule a call"
+    strategy: "Propose specific times. Make it easy to say yes."
+    cta: "2-3 specific time slots or Calendly link"
+
+  follow_up:
+    description: "Call booked or proposal sent, awaiting next step"
+    strategy: "Gentle nudge. Add value (relevant article, case study)."
+    cta: "Check in without being pushy"
+
+  nurture:
+    description: "Not ready now but could be later"
+    strategy: "Periodic value-add (not automated initially). Stay top of mind."
+    cta: "Share something relevant, no ask"
+
+persona:
+  name: "Colin"
+  role: "Co-founder of Growlancer"
+  style: "Direct, knowledgeable, genuinely curious about their business"

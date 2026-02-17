@@ -1,0 +1,72 @@
+polling:
+  interval_seconds: 120
+  gmail_max_results: 50
+
+classification:
+  model: claude-sonnet-4-5-20250929
+  temperature: 0.1
+
+reply_drafting:
+  model: claude-sonnet-4-5-20250929
+  temperature: 0.7
+  max_linkedin_words: 60
+  max_email_words: 150
+  self_critique_enabled: true
+
+sending:
+  auto_send: false
+  auto_send_rules:
+    min_confidence: 0.85
+    allowed_categories: ["warm", "cold"]
+    max_per_day: 50
+    require_prior_human_approval: true
+  rate_limit:
+    gmail_per_hour: 20
+    linkedin_per_hour: 10
+
+connections:
+  auto_accept: true
+  min_icp_confidence: 0.7
+
+enrichment:
+  enabled: true
+  provider: rapidapi
+
+error_handling:
+  max_retries: 3
+  circuit_breaker_threshold: 5
+  circuit_breaker_cooldown_seconds: 600
+
+learning:
+  enabled: true
+  schedule_time: "06:00"
+  lookback_days: 7
+  max_active_rules: 10
+  min_messages_for_analysis: 3
+
+followup:
+  enabled: true
+  schedule_time: "08:00"
+  total_followups: 8
+  linkedin_followups: 4
+  days_between: 3
+  days_before_activation: 3
+  auto_approve_threshold: 2
+  model: claude-sonnet-4-5-20250929
+  temperature: 0.7
+
+# --- Airtable UI Setup Tips ---
+# Color coding (set in Airtable field config):
+#   Lead Category: Hot=Red, Warm=Orange, Cold=Blue
+#   Follow-Up Status: Active=Green, Paused=Yellow, Exhausted=Red
+#   Message Status: Draft Ready=Yellow, Sent=Blue, Failed=Red
+#
+# Recommended column order (Contacts):
+#   Name > Company > Lead Category > Stage > Follow-Up Status > Next Follow-Up Date > Last Contact
+#
+# Recommended column order (Messages):
+#   Status > Draft Reply > Source > Follow-Up Number > Contact > Edit Distance
+#
+# Dashboard: Create an Airtable Interface with:
+#   Section 1: Follow-Up Queue + Pending Approval (side by side)
+#   Section 2: Pipeline view grouped by Stage

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "labeled_001",
+    "source": "Gmail",
+    "sender_name": "John Smith",
+    "sender_email": "john@acmeagency.com",
+    "sender_title": "CEO",
+    "sender_company": "Acme Marketing Agency",
+    "body": "Hi, I've been looking into LinkedIn outreach services for our B2B marketing agency. We have about 25 employees and are doing around $3M in revenue. Would love to hear how you approach this.",
+    "expected_category": "Hot",
+    "expected_should_reply": true,
+    "expected_stage": "New"
+  },
+  {
+    "id": "labeled_002",
+    "source": "LinkedIn",
+    "sender_name": "Sarah Johnson",
+    "sender_title": "Managing Partner",
+    "sender_company": "Growth Consulting Group",
+    "body": "Hey Colin, saw your posts about LinkedIn outreach — we're a consulting firm and have been trying to get more clients through LinkedIn but struggling with response rates. Any tips?",
+    "expected_category": "Warm",
+    "expected_should_reply": true,
+    "expected_stage": "New"
+  },
+  {
+    "id": "labeled_003",
+    "source": "LinkedIn",
+    "sender_name": "Alex Rivera",
+    "sender_title": "Software Engineer",
+    "sender_company": "Google",
+    "body": "Hi! I'm looking for new opportunities in sales development. Are you guys hiring by any chance?",
+    "expected_category": "Not a Lead",
+    "expected_should_reply": true,
+    "expected_stage": "New"
+  },
+  {
+    "id": "labeled_004",
+    "source": "LinkedIn",
+    "sender_name": "Chris Davis",
+    "sender_title": "Founder at LeadGenPro",
+    "sender_company": "LeadGenPro",
+    "body": "Hey! We also do LinkedIn outreach automation. Would love to explore a partnership opportunity.",
+    "expected_category": "Not a Lead",
+    "expected_should_reply": true,
+    "expected_stage": "New"
+  },
+  {
+    "id": "labeled_005",
+    "source": "Gmail",
+    "sender_name": "Emily Watson",
+    "sender_email": "emily@startuphub.io",
+    "sender_title": "Head of Growth",
+    "sender_company": "StartupHub",
+    "body": "Nice to connect! Looking forward to seeing your content.",
+    "expected_category": "Cold",
+    "expected_should_reply": false,
+    "expected_stage": "New"
+  }
+]
