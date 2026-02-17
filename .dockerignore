@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.env
+data/sdr.db
+data/logs/
+.git/
+.claude/
+tests/
+config/gmail_credentials.json
+data/gmail_token.json
+.DS_Store
